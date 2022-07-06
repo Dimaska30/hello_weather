@@ -1,16 +1,16 @@
-import 'package:meta/meta.dart';
 import 'day.dart';
+import 'package:hello_weather/domain/model/city.dart';
 
 class DailyForecast {
-  final DataTime time_requiest;
+  final DateTime timeRequiest;
   final City city;
-  final int count_days;
+  final int countDays;
   final List<Day> days;
 
   DailyForecast({
-    @required this.time_requiest,
-    @required this.city,
-    @required this.count_days,
-    @required this.days,
+    required this.timeRequiest,
+    required this.city,
+    required this.countDays,
+    required this.days,
   });
 }

@@ -1,5 +1,3 @@
-import 'package:meta/meta.dart';
-
 class City {
   final String name;
   final double lat;
@@ -7,9 +5,9 @@ class City {
   final int id;
 
   City({
-    @required this.name,
-    @required this.lat,
-    @required this.lon,
-    @required this.id,
+    required this.name,
+    required this.lat,
+    required this.lon,
+    required this.id,
   });
 }

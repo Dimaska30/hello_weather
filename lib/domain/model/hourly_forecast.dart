@@ -1,14 +1,11 @@
-import 'package:meta/meta.dart';
 import 'city.dart';
 
 class HourlyForecast {
-  final DataTime time_requiest;
+  final DateTime timeRequiest;
   final City city;
 
-
   HourlyForecast({
-    @required this.name,
-    @required this.time_requiest,
-    @required this.city,
+    required this.timeRequiest,
+    required this.city,
   });
 }

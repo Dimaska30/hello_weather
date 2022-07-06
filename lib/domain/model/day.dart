@@ -1,16 +1,12 @@
-import 'package:meta/meta.dart';
-import 'weather.dart';
-
-
 class Day {
-  final DataTime time;
-  final DataTime time_sunrise;
-  final DataTime time_sunset;
-  final Map<String,double> temp;
-  final Map<String,double> feels_like;
-  final int weather_id;
-  final String weather_main;
-  final String weather_description;
+  final DateTime time;
+  final DateTime timeSunrise;
+  final DateTime timeSunset;
+  final Map<String, double> temp;
+  final Map<String, double> feelsLike;
+  final int weatherId;
+  final String weatherMain;
+  final String weatherDescription;
   final double pressure;
   final double humidity;
   final double speed;
@@ -20,12 +16,24 @@ class Day {
   final double rain;
   final double snow;
   final double pop;
-  final City city;
-
 
   Day({
-    @required this.name,
-    @required this.time_requiest,
-    @required this.city,
+    required this.time,
+    required this.timeSunrise,
+    required this.timeSunset,
+    required this.temp,
+    required this.feelsLike,
+    required this.weatherId,
+    required this.weatherMain,
+    required this.weatherDescription,
+    required this.pressure,
+    required this.humidity,
+    required this.speed,
+    required this.deg,
+    required this.gust,
+    required this.clouds,
+    required this.rain,
+    required this.snow,
+    required this.pop,
   });
 }
