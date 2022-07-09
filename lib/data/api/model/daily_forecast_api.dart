@@ -1,5 +1,5 @@
-import 'package:hello_weather/data/api/day_api.dart';
-import 'package:hello_weather/data/api/city_api.dart';
+import 'package:hello_weather/data/api/model/day_api.dart';
+import 'package:hello_weather/data/api/model/city_api.dart';
 
 class ApiDailyForecast {
   final String timeRequiest;

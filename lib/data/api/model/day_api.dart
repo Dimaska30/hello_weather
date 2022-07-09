@@ -1,5 +1,5 @@
-import 'package:hello_weather/data/api/temp_api.dart';
-import 'package:hello_weather/data/api/feels_like_api.dart';
+import 'package:hello_weather/data/api/model/temp_api.dart';
+import 'package:hello_weather/data/api/model/feels_like_api.dart';
 
 class ApiDay {
   final String time;

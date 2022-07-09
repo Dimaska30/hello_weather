@@ -1,4 +1,4 @@
-import 'package:hello_weather/data/api/city_api.dart';
+import 'package:hello_weather/data/api/model/city_api.dart';
 import 'package:hello_weather/domain/model/city.dart';
 
 class CityMapper {
@@ -7,7 +7,6 @@ class CityMapper {
       name: city.name,
       lat: city.lat.toDouble(),
       lon: city.lon.toDouble(),
-      id: city.id.toInt(),
     );
   }
 }

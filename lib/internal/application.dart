@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../presentation/home.dart';
+import 'package:hello_weather/presentation/city_choise.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class Application extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: CityChoise(),
     );
   }
 }

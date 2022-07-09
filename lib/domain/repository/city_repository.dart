@@ -1,7 +1,7 @@
 import 'package:hello_weather/domain/model/city.dart';
 
 abstract class CityRepository {
-  Future<City> getCity({
+  Future<List<City>> getCity({
     required String name,
   });
 }

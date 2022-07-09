@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:hello_weather/data/api/day_api.dart';
+import 'package:hello_weather/data/api/model/day_api.dart';
 import 'package:hello_weather/domain/model/day.dart';
 import 'package:hello_weather/data/mapper/feels_like_mapper.dart';
 import 'package:hello_weather/data/mapper/temp_mapper.dart';

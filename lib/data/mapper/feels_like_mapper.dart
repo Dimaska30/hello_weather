@@ -1,4 +1,4 @@
-import 'package:hello_weather/data/api/feels_like_api.dart';
+import 'package:hello_weather/data/api/model/feels_like_api.dart';
 
 class FeelsLikeMapper {
   static Map<String, double> fromApi(ApiFeelsLike list) => {
