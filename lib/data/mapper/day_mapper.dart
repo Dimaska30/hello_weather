@@ -9,9 +9,9 @@ class DayMapper {
     DateTime temp1, temp2, temp3;
     temp1 = temp2 = temp3 = DateTime.now();
     try {
-      temp1 = DateTime.parse(day.time);
-      temp2 = DateTime.parse(day.timeSunrise);
-      temp3 = DateTime.parse(day.timeSunset);
+      temp1 = DateTime.fromMillisecondsSinceEpoch(day.time);
+      temp2 = DateTime.fromMillisecondsSinceEpoch(day.timeSunrise);
+      temp3 = DateTime.fromMillisecondsSinceEpoch(day.timeSunset);
     } catch (e) {
       if (kDebugMode) {
         print(e);
@@ -27,13 +27,13 @@ class DayMapper {
       weatherMain: day.weatherMain,
       weatherDescription: day.weatherDescription,
       pressure: day.pressure.toDouble(),
-      humidity: day.pressure.toDouble(),
-      speed: day.pressure.toDouble(),
-      deg: day.pressure.toDouble(),
+      humidity: day.humidity.toDouble(),
+      speed: day.speed.toDouble(),
+      deg: day.deg.toDouble(),
       gust: day.gust.toDouble(),
-      clouds: day.pressure.toDouble(),
-      rain: day.pressure.toDouble(),
-      snow: day.pressure.toDouble(),
+      clouds: day.clouds.toDouble(),
+      rain: day.rain?.toDouble() ?? -1,
+      snow: day.snow?.toDouble() ?? -1,
       pop: day.pressure.toDouble(),
     );
   }

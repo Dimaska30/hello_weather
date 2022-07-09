@@ -2,9 +2,9 @@ import 'package:hello_weather/data/api/model/temp_api.dart';
 import 'package:hello_weather/data/api/model/feels_like_api.dart';
 
 class ApiDay {
-  final String time;
-  final String timeSunrise;
-  final String timeSunset;
+  final int time;
+  final int timeSunrise;
+  final int timeSunset;
   final ApiTemp temp;
   final ApiFeelsLike feelsLike;
   final num weatherId;
@@ -16,26 +16,26 @@ class ApiDay {
   final num deg;
   final num gust;
   final num clouds;
-  final num rain;
-  final num snow;
+  final num? rain;
+  final num? snow;
   final num pop;
 
   ApiDay.fromApi(Map<String, dynamic> map)
-      : time = map['results']['time'],
-        timeSunrise = map['results']['time_sunrise'],
-        timeSunset = map['results']['time_sunset'],
-        temp = ApiTemp.fromApi(map['results']['temp']),
-        feelsLike = ApiFeelsLike.fromApi(map['results']['feels_like']),
-        weatherId = map['results']['weather_id'],
-        weatherMain = map['results']['weather_main'],
-        weatherDescription = map['results']['weather_description'],
-        pressure = map['results']['pressure'],
-        humidity = map['results']['humidity'],
-        speed = map['results']['speed'],
-        deg = map['results']['deg'],
-        gust = map['results']['gust'],
-        clouds = map['results']['clouds'],
-        rain = map['results']['rain'],
-        snow = map['results']['snow'],
-        pop = map['results']['pop'];
+      : time = map['dt'],
+        timeSunrise = map['sunrise'],
+        timeSunset = map['sunset'],
+        temp = ApiTemp.fromApi(map['temp']),
+        feelsLike = ApiFeelsLike.fromApi(map['feels_like']),
+        weatherId = map['weather'][0]['id'],
+        weatherMain = map['weather'][0]['main'],
+        weatherDescription = map['weather'][0]['description'],
+        pressure = map['pressure'],
+        humidity = map['humidity'],
+        speed = map['wind_speed'],
+        deg = map['wind_deg'],
+        gust = map['wind_gust'],
+        clouds = map['clouds'],
+        rain = map['rain'],
+        snow = map['snow'],
+        pop = map['pop'];
 }

@@ -13,10 +13,12 @@ abstract class DailyForecastPageStateBase with Store {
   DailyForecastPageStateBase(this._forecastRepository);
 
   final DailyForecastRepository _forecastRepository;
-  final City _city = City(name: "Omsk", lat: 55.0, lon: 73.4);
 
   @observable
-  DailyForecast? city;
+  City city = City(name:"Omsk", lat:55.0,lon:73.4);
+
+  @observable
+  DailyForecast? forecast;
 
   @observable
   bool isLoading = false;
@@ -26,8 +28,8 @@ abstract class DailyForecastPageStateBase with Store {
     required String nameCity,
   }) async {
     isLoading = true;
-    final data = await _forecastRepository.getForecast(city: _city);
-    city = data;
+    final data = await _forecastRepository.getForecast(city: city);
+    forecast = data;
     isLoading = false;
   }
 }

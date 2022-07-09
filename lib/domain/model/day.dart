@@ -1,3 +1,5 @@
+
+
 class Day {
   final DateTime time;
   final DateTime timeSunrise;
@@ -36,4 +38,13 @@ class Day {
     required this.snow,
     required this.pop,
   });
+
+  @override
+  String toString() {
+    return """
+    DATE: $time,
+    temp: $temp,
+    feel_like: $feelsLike.
+    """;
+  }
 }

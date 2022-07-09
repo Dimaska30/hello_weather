@@ -13,15 +13,31 @@ mixin _$DailyForecastPageState on DailyForecastPageStateBase, Store {
       Atom(name: 'DailyForecastPageStateBase.city', context: context);
 
   @override
-  DailyForecast? get city {
+  City get city {
     _$cityAtom.reportRead();
     return super.city;
   }
 
   @override
-  set city(DailyForecast? value) {
+  set city(City value) {
     _$cityAtom.reportWrite(value, super.city, () {
       super.city = value;
+    });
+  }
+
+  late final _$forecastAtom =
+      Atom(name: 'DailyForecastPageStateBase.forecast', context: context);
+
+  @override
+  DailyForecast? get forecast {
+    _$forecastAtom.reportRead();
+    return super.forecast;
+  }
+
+  @override
+  set forecast(DailyForecast? value) {
+    _$forecastAtom.reportWrite(value, super.forecast, () {
+      super.forecast = value;
     });
   }
 
@@ -54,6 +70,7 @@ mixin _$DailyForecastPageState on DailyForecastPageStateBase, Store {
   String toString() {
     return '''
 city: ${city},
+forecast: ${forecast},
 isLoading: ${isLoading}
     ''';
   }
