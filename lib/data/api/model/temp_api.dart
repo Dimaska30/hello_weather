@@ -1,10 +1,10 @@
 class ApiTemp {
-  final num day;
-  final num min;
-  final num max;
-  final num night;
-  final num evening;
-  final num morning;
+  final double day;
+  final double min;
+  final double max;
+  final double night;
+  final double evening;
+  final double morning;
 
   ApiTemp.fromApi(Map<String, dynamic> map)
       : day = map['day'],

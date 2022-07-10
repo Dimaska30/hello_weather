@@ -1,36 +1,22 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:hello_weather/presentation/const_data.dart';
 
 class _LineChart extends StatelessWidget {
-  const _LineChart({required this.isShowingMainData,
-                    required this.actual,
-                    required this.feelLike,
-                    required this.minY, required this.maxY});
+  const _LineChart(
+      {required this.isShowingMainData,
+      required this.actual,
+      required this.feelLike,
+      required this.minY,
+      required this.maxY});
 
   final bool isShowingMainData;
 
   final double minY, maxY;
 
   final List<FlSpot> actual;
-  /*  = [
-          FlSpot(1, 10),
-          FlSpot(2, 12),
-          FlSpot(3, 15),
-          FlSpot(4, 9),
-          FlSpot(5, 11),
-          FlSpot(6, 8),
-          FlSpot(7, 5),
-        ]; */
 
-  final List<FlSpot> feelLike/*  = [
-          FlSpot(1, 13),
-          FlSpot(2, 12),
-          FlSpot(3, 19),
-          FlSpot(4, 11),
-          FlSpot(5, 7),
-          FlSpot(6, 4),
-          FlSpot(7, 2),
-        ] */;
+  final List<FlSpot> feelLike;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +53,7 @@ class _LineChart extends StatelessWidget {
   LineTouchData get lineTouchData1 => LineTouchData(
         handleBuiltInTouches: true,
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+          tooltipBgColor: ConstData.blueGreyWithOpacity,
         ),
       );
 
@@ -117,15 +103,15 @@ class _LineChart extends StatelessWidget {
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Color(0xff75729e),
+      color: ConstData.greyLavanda,
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );
     String text;
-    if(value % 1 == 0){
-      if(value > 0){
+    if (value % 1 == 0) {
+      if (value > 0) {
         text = '+${value.toInt()}';
-      } else if (value <0){
+      } else if (value < 0) {
         text = '-${value.toInt()}';
       } else {
         text = "0";
@@ -146,21 +132,21 @@ class _LineChart extends StatelessWidget {
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Color(0xff72719b),
+      color: ConstData.greyLavanda2,
       fontWeight: FontWeight.bold,
       fontSize: 16,
     );
     String text;
-    switch(value.toInt()){
+    switch (value.toInt()) {
       case 0:
-      text= "today";
-      break;
+        text = "today";
+        break;
       case 1:
-      text= "tommorow";
-      break;
+        text = "tommorow";
+        break;
       default:
-      text= '${value.toInt()}';
-      break;
+        text = '${value.toInt()}';
+        break;
     }
 
     return SideTitleWidget(
@@ -182,7 +168,7 @@ class _LineChart extends StatelessWidget {
   FlBorderData get borderData => FlBorderData(
         show: true,
         border: const Border(
-          bottom: BorderSide(color: Color(0xff4e4965), width: 4),
+          bottom: BorderSide(color: ConstData.greyInk, width: 4),
           left: BorderSide(color: Colors.transparent),
           right: BorderSide(color: Colors.transparent),
           top: BorderSide(color: Colors.transparent),
@@ -191,7 +177,7 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
         isCurved: true,
-        color: const Color(0xff4af699),
+        color: ConstData.blinkGreen,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
@@ -201,13 +187,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
         isCurved: true,
-        color: const Color(0xffaa4cfc),
+        color: ConstData.fucsia,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
         belowBarData: BarAreaData(
           show: false,
-          color: const Color(0x00aa4cfc),
+          color: ConstData.fucsiaWithOpacity,
         ),
         spots: feelLike,
       );
@@ -215,7 +201,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_1 => LineChartBarData(
         isCurved: true,
         curveSmoothness: 0,
-        color: const Color(0x444af699),
+        color: ConstData.blinkGreenWithOpacity,
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
@@ -225,13 +211,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData2_2 => LineChartBarData(
         isCurved: true,
-        color: const Color(0x99aa4cfc),
+        color: ConstData.fucsiaWithOpacity2,
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(show: false),
         belowBarData: BarAreaData(
           show: true,
-          color: const Color(0x33aa4cfc),
+          color: ConstData.fucsiaWithOpacity3,
         ),
         spots: feelLike,
       );
@@ -241,7 +227,14 @@ class MyLineChart extends StatefulWidget {
   final String nameCity;
   final List<FlSpot> actual, feelLike;
   final double min, max;
-  const MyLineChart({Key? key, required this.nameCity, required this.actual, required this.feelLike, required this.min, required this.max}) : super(key: key);
+  const MyLineChart(
+      {Key? key,
+      required this.nameCity,
+      required this.actual,
+      required this.feelLike,
+      required this.min,
+      required this.max})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() => MyLineChartState();
@@ -265,8 +258,8 @@ class MyLineChartState extends State<MyLineChart> {
           borderRadius: BorderRadius.all(Radius.circular(18)),
           gradient: LinearGradient(
             colors: [
-              Color(0xff2c274c),
-              Color(0xff46426c),
+              ConstData.greyBlue,
+              ConstData.greyBlue2,
             ],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
@@ -283,7 +276,7 @@ class MyLineChartState extends State<MyLineChart> {
                 Text(
                   'Weather ${widget.nameCity}',
                   style: const TextStyle(
-                    color: Color(0xff827daa),
+                    color: ConstData.lavanda,
                     fontSize: 16,
                   ),
                   textAlign: TextAlign.center,
@@ -307,9 +300,13 @@ class MyLineChartState extends State<MyLineChart> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(right: 16.0, left: 6.0),
-                    child: _LineChart(isShowingMainData: isShowingMainData,
-                                      actual: widget.actual, feelLike: widget.feelLike,
-                                      minY: widget.min, maxY: widget.max,),
+                    child: _LineChart(
+                      isShowingMainData: isShowingMainData,
+                      actual: widget.actual,
+                      feelLike: widget.feelLike,
+                      minY: widget.min,
+                      maxY: widget.max,
+                    ),
                   ),
                 ),
                 const SizedBox(

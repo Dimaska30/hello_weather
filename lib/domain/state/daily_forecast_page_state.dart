@@ -1,13 +1,12 @@
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:hello_weather/domain/model/daily_forecast.dart';
 import 'package:mobx/mobx.dart';
 import 'package:hello_weather/domain/repository/daily_forecast_repository.dart';
 import 'package:hello_weather/domain/model/city.dart';
 
-//ignore
 part 'daily_forecast_page_state.g.dart';
 
-class DailyForecastPageState = DailyForecastPageStateBase with _$DailyForecastPageState;
+class DailyForecastPageState = DailyForecastPageStateBase
+    with _$DailyForecastPageState;
 
 abstract class DailyForecastPageStateBase with Store {
   DailyForecastPageStateBase(this._forecastRepository);
@@ -15,7 +14,7 @@ abstract class DailyForecastPageStateBase with Store {
   final DailyForecastRepository _forecastRepository;
 
   @observable
-  City city = City(name:"Omsk", lat:55.0,lon:73.4);
+  City city = City(name: "Omsk", lat: 55.0, lon: 73.4);
 
   @observable
   DailyForecast? forecast;

@@ -1,8 +1,8 @@
 class ApiFeelsLike {
-  final num day;
-  final num night;
-  final num evening;
-  final num morning;
+  final double day;
+  final double night;
+  final double evening;
+  final double morning;
 
   ApiFeelsLike.fromApi(Map<String, dynamic> map)
       : day = map['day'],

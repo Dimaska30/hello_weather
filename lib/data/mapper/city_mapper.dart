@@ -5,8 +5,8 @@ class CityMapper {
   static City fromApi(ApiCity city) {
     return City(
       name: city.name,
-      lat: city.lat.toDouble(),
-      lon: city.lon.toDouble(),
+      lat: city.lat,
+      lon: city.lon,
     );
   }
 }

@@ -8,8 +8,7 @@ class DailyForecastPage extends StatefulWidget {
   const DailyForecastPage({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _DailyForecastPageState createState() => _DailyForecastPageState();
+  State<DailyForecastPage> createState() => _DailyForecastPageState();
 }
 
 class _DailyForecastPageState extends State<DailyForecastPage> {
@@ -28,7 +27,6 @@ class _DailyForecastPageState extends State<DailyForecastPage> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return Observer(
       builder: (_) {
         if (_dailyForecastPageState.isLoading) {
@@ -52,6 +50,5 @@ class _DailyForecastPageState extends State<DailyForecastPage> {
         return Container();
       },
     );
-    /* return  */
   }
 }

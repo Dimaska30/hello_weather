@@ -1,7 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
-
 import 'day.dart';
-import 'package:hello_weather/domain/model/city.dart';
 
 class DailyForecast {
   final int countDays;
@@ -19,7 +17,8 @@ class DailyForecast {
     for (var el in days) {
       if (el.temp["day"]! > result) {
         result = el.temp["day"]!;
-      }if (el.feelsLike["day"]! > result) {
+      }
+      if (el.feelsLike["day"]! > result) {
         result = el.feelsLike["day"]!;
       }
     }

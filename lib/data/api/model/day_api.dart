@@ -7,18 +7,18 @@ class ApiDay {
   final int timeSunset;
   final ApiTemp temp;
   final ApiFeelsLike feelsLike;
-  final num weatherId;
+  final int weatherId;
   final String weatherMain;
   final String weatherDescription;
-  final num pressure;
-  final num humidity;
-  final num speed;
-  final num deg;
-  final num gust;
-  final num clouds;
-  final num? rain;
-  final num? snow;
-  final num pop;
+  final double pressure;
+  final double humidity;
+  final double speed;
+  final double deg;
+  final double gust;
+  final double clouds;
+  final double? rain;
+  final double? snow;
+  final double pop;
 
   ApiDay.fromApi(Map<String, dynamic> map)
       : time = map['dt'],

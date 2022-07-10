@@ -1,7 +1,7 @@
 class ApiCity {
   final String name;
-  final num lat;
-  final num lon;
+  final double lat;
+  final double lon;
 
   ApiCity.fromApi(Map<String, dynamic> map)
       : name = map['name'],

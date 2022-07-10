@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hello_weather/presentation/city_choise.dart';
 import 'package:hello_weather/presentation/forecast_page.dart';
 
 class Application extends StatelessWidget {
@@ -13,7 +12,7 @@ class Application extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
+      home: const Scaffold(
         body: DailyForecastPage(),
       ),
     );
